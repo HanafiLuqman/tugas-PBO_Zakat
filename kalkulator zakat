@@ -1,0 +1,30 @@
+ import java.util.Scanner;
+
+public class ZAKATMAL {
+    public static void main(String[] args) {
+        // Membuat scanner untuk input dari pengguna
+        Scanner input = new Scanner(System.in);
+
+        // Harga emas per gram dalam Rupiah (asumsi harga saat ini)
+        double hargaemas = 1000000;  // Rp 1.000.000 per gram
+        double nisab = 85 * hargaemas;  // Nilai nisab dalam Rupiah (85 gram emas)
+
+        // Meminta pengguna memasukkan jumlah kekayaan (uang) dalam bentuk desimal
+        System.out.print("Masukkan keseluruhan jumlah harta yang kamu miliki selama satu nisab: Rp. ");
+        double totalKekayaan = input.nextDouble();
+
+        // Mengecek apakah kekayaan lebih dari nisab
+        if (totalKekayaan >= nisab) {
+            // Menghitung zakat sebesar 2.5%
+            double jumlahZakat = totalKekayaan * 2.5 / 100;
+
+            // Menampilkan jumlah zakat yang harus dibayarkan
+            System.out.println("Jumlah kekayaan kamu melebihi nisab.");
+            System.out.println("maka kamu terhitung wajib membayar sejumlah: Rp " + jumlahZakat);
+        } else {
+            // Memberi tahu bahwa muzakky belum wajib membayar zakat
+            System.out.println("Jumlah kekayaan kamu belum memenuhi nisab.");
+            System.out.println("kamu belum wajib membayar zakat.");
+        }
+    }
+}
